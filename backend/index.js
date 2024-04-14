@@ -5,6 +5,9 @@ import { Book } from './models/bookModel.js';
 
 const app = express();
 
+// Middleware for using JSON
+app.use(express.json());
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
