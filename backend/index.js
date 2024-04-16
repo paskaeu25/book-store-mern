@@ -9,6 +9,15 @@ const app = express();
 // Middleware for using JSON
 app.use(express.json());
 
+// Middleware for CORS
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+  })
+);
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
